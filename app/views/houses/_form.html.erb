@@ -1,0 +1,37 @@
+<%= form_for(house) do |f| %>
+  <% if house.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(house.errors.count, "error") %> prohibited this house from being saved:</h2>
+
+      <ul>
+      <% house.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :motto %>
+    <%= f.text_field :motto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :region %>
+    <%= f.text_field :region %>
+  </div>
+
+  <div class="field">
+    <%= f.label :img_url %>
+    <%= f.text_field :img_url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
